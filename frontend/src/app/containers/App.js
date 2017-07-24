@@ -90,6 +90,7 @@ class App extends Component {
       isMobile: isMobile(userAgent),
       isMinFirefox: isMinFirefoxVersion(userAgent, config.minFirefoxVersion),
       isDev: config.isDev,
+      locales: navigator.languages.map(function(loc){return loc.split('-')[0];}),
       locale: (navigator.language || '').split('-')[0]
     });
     this.props.chooseTests();
